@@ -43,6 +43,15 @@ class bicluster:
     self.id=id
     self.distance=distance
 
+"""
+ALGORITHM:
+1. Create groups of clusters that are just the original items, i.e., each individual entity is in itself a cluster
+2. Search for two best matches by trying every possible pair and calculating their correlation.
+3. Merge the best pair into a single cluster.
+-> The data for this new cluster is the average of the data for the two old clusters.
+4. Repeat until only one cluster remains.
+"""
+
 def hcluster(rows,distance=pearson):
   distances={}
   currentclustid=-1
