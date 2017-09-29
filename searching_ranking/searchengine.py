@@ -1,6 +1,7 @@
 """
 Let us build a crawler
 """
+import re
 import urllib2
 from bs4 import BeautifulSoup
 from urlparse import urljoin
@@ -32,11 +33,21 @@ class crawler:
 
 	# Extract the text from an HTML page(no tags)
 	def gettextonly(self, soup):
-		return None
+		v = soup.string
+		if v == None:
+			c = soup.contents
+			resulttext=''
+			for t in c:
+				subtext = self.gettextonly(t)
+				resulttext += subtext+'\n'
+			return resulttext
+		else:
+			return v.strip()
 
 	# Seperate the words by any non-whitespace character
 	def seperatewords(self, text):
-		return None
+		splitter = re.compile('\\W*')
+		return [s.lower() for s in splitter.split(text) if s!='']
 
 	# Return true if this url is already
 	def isindexed(self, url):
