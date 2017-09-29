@@ -2,7 +2,7 @@
 
 ## Introduction
 - It is a collection of several smart programs, present in the book "Programming Collective Intelligence" by O'reilly publications.
-- The programs are present with explanation to code adjacent to the code. This ensures the is understandable to anyone from beginner to professional.
+- The programs are present with explanation to code adjacent to the code. This ensures they are understandable to anyone from beginner to professional.
 
 ## Content
 1. Making Recommendation
